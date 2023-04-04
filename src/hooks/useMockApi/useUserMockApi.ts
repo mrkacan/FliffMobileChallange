@@ -1,4 +1,4 @@
-import DATA from './users.json';
+import userData from './users.json';
 import {user, UserAccountStatus} from '../../types';
 
 type UseUserMockApi = {
@@ -7,7 +7,7 @@ type UseUserMockApi = {
 
 const UseUserMockApi = (): UseUserMockApi => {
   const getUser = (username: string) =>
-    DATA.find((userItem: user) => userItem.username === username);
+    userData.find((userItem: user) => userItem.username === username);
 
   const getUserStatus = (username: string) => {
     const willCheckUser = getUser(username);
