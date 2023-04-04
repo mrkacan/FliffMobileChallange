@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 type TitleProps = {
-  children: string;
+  children: string | null;
 };
 
 const StyledText = styled.Text`
@@ -12,8 +12,8 @@ const StyledText = styled.Text`
   margin-bottom: 40px;
 `;
 
-const Text: React.FC<TitleProps> = ({children}) => {
+const Title: React.FC<TitleProps> = ({children}) => {
   return <StyledText>{children}</StyledText>;
 };
 
-export default Text;
+export default Title;
