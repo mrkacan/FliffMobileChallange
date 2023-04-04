@@ -4,17 +4,25 @@ import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, RouteProp} from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import SettingsScreen from './screens/SettingsScreen/SettingsScreen';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationOptions,
+} from '@react-navigation/native-stack';
 import DetailScreen from './screens/DetailScreen/DetailScreen';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
 import {AuthProvider, useAuth} from './hooks/useAuth';
+import {tweet} from './types';
+import {colors} from './themes/colors';
 
 type RootStackParamList = {
-  home: undefined;
-  details: undefined;
+  main: undefined;
+  details: {
+    tweet: tweet;
+    username: string | null;
+  };
   login: undefined;
 };
 
@@ -22,6 +30,8 @@ type BottomTabParamList = {
   home: undefined;
   settings: undefined;
 };
+
+export type DetailsScreenRouteProp = RouteProp<RootStackParamList, 'details'>;
 
 declare global {
   namespace ReactNavigation {
@@ -34,12 +44,37 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const homeTabNavigatorOptions: BottomTabNavigationOptions = {
   headerShown: false,
+  tabBarLabelStyle: {
+    fontWeight: '700',
+    fontSize: 14,
+  },
+  tabBarItemStyle: {
+    justifyContent: 'center',
+  },
+  tabBarIconStyle: {display: 'none'},
+  tabBarActiveTintColor: colors.primary,
+};
+
+const appMainStackNavigatorOptions: NativeStackNavigationOptions = {
+  headerShown: false,
 };
 const HomeTabNavigator = () => {
   return (
     <Tab.Navigator screenOptions={homeTabNavigatorOptions}>
-      <Tab.Screen name="home" component={HomeScreen} />
-      <Tab.Screen name="settings" component={SettingsScreen} />
+      <Tab.Screen
+        name="home"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Home',
+        }}
+      />
+      <Tab.Screen
+        name="settings"
+        component={SettingsScreen}
+        options={{
+          tabBarLabel: 'Settings',
+        }}
+      />
     </Tab.Navigator>
   );
 };
@@ -48,10 +83,10 @@ const AppMainStack = () => {
   const {isLoggedIn} = useAuth();
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={appMainStackNavigatorOptions}>
         {isLoggedIn ? (
           <Stack.Group>
-            <Stack.Screen name="home" component={HomeTabNavigator} />
+            <Stack.Screen name="main" component={HomeTabNavigator} />
             <Stack.Screen name="details" component={DetailScreen} />
           </Stack.Group>
         ) : (
