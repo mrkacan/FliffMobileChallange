@@ -1,0 +1,27 @@
+[
+  {
+    "username": "mrkacan",
+    "name": "Emre",
+    "avatar": "https://avatars.githubusercontent.com/u/1402241?v=3",
+    "userAccountStatus": "active"
+  },
+  {
+    "username": "sindre",
+    "name": "Sindre Sorhus",
+    "avatar": "https://avatars.githubusercontent.com/u/170270?v=3",
+    "userAccountStatus": "suspended"
+  },
+  {
+    "username": "john",
+    "name": "John Resig",
+    "avatar": "https://avatars.githubusercontent.com/u/122?v=3",
+    "userAccountStatus": "deactivated"
+  },
+  {
+    "username": "addy",
+    "name": "Addy Osmani",
+    "avatar": "https://avatars.githubusercontent.com/u/110953?v=3",
+    "userAccountStatus": "deactivated"
+  }
+]
+
