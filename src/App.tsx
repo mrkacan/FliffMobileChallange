@@ -5,11 +5,12 @@ import {
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import HomeScreen from './src/screens/HomeScreen/HomeScreen';
-import SettingsScreen from './src/screens/SettingsScreen/SettingsScreen';
+import HomeScreen from './screens/HomeScreen/HomeScreen';
+import SettingsScreen from './screens/SettingsScreen/SettingsScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import DetailScreen from './src/screens/DetailScreen/DetailScreen';
-import LoginScreen from './src/screens/LoginScreen/LoginScreen';
+import DetailScreen from './screens/DetailScreen/DetailScreen';
+import LoginScreen from './screens/LoginScreen/LoginScreen';
+import {AuthProvider, useAuth} from './hooks/useAuth';
 
 type RootStackParamList = {
   home: undefined;
@@ -43,14 +44,12 @@ const HomeTabNavigator = () => {
   );
 };
 
-function App(): JSX.Element {
-  const isLogged: boolean = false;
-
+const AppMainStack = () => {
+  const {isLoggedIn} = useAuth();
   return (
     <NavigationContainer>
-      <StatusBar barStyle="dark-content" />
       <Stack.Navigator>
-        {isLogged ? (
+        {isLoggedIn ? (
           <Stack.Group>
             <Stack.Screen name="home" component={HomeTabNavigator} />
             <Stack.Screen name="details" component={DetailScreen} />
@@ -62,6 +61,15 @@ function App(): JSX.Element {
         )}
       </Stack.Navigator>
     </NavigationContainer>
+  );
+};
+
+function App(): JSX.Element {
+  return (
+    <AuthProvider>
+      <StatusBar barStyle="dark-content" />
+      <AppMainStack />
+    </AuthProvider>
   );
 }
 
