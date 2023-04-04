@@ -10,7 +10,6 @@ export type tweet = {
   id: string;
   image: string;
   text: string;
-  isSuspended: boolean;
 };
 
 export enum UserAccountStatus {

@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import tweetsData from './tweets.json';
+import unsortedTweets from './tweets.json';
 import {tweet} from '../../types';
 
 type UseTweetMockApi = {
@@ -9,6 +9,10 @@ type UseTweetMockApi = {
   error: boolean;
   loading: boolean;
 };
+
+const tweetsData = unsortedTweets.sort((a, b) => {
+  return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+});
 
 const LIMIT: number = 20;
 const useTweetMockApi = (): UseTweetMockApi => {

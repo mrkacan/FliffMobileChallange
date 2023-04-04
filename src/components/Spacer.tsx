@@ -6,7 +6,7 @@ type SpacerProps = {
 };
 
 const StyledView = styled.View<SpacerProps>`
-  height: ${props => props.height};
+  height: ${props => props.height}px;
 `;
 
 const Screen: React.FC<SpacerProps> = ({height}) => {

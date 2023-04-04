@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import {colors} from '../themes/colors';
 
 type InputErrorProps = {
   children?: string;
@@ -8,7 +9,7 @@ type InputErrorProps = {
 //error message
 const StyledText = styled.Text`
   font-size: 11px;
-  color: #ff0000;
+  color: ${colors.inputErrorText};
   margin: 10px 15px;
 `;
 

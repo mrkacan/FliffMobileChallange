@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import {colors} from '../themes/colors';
 
 type InputProps = {
   field: {
@@ -14,10 +15,10 @@ const StyledTextInput = styled.TextInput`
   width: 100%;
   height: 30px;
   border-bottom-width: 1px;
-  border-bottom-color: #c9c9c9;
+  border-bottom-color: ${colors.inputBorder};
   padding: 0 10px;
   font-size: 13px;
-  color: #3f88de;
+  color: ${colors.primary};
 `;
 
 const Input: React.FC<InputProps> = ({
@@ -31,7 +32,7 @@ const Input: React.FC<InputProps> = ({
     autoCapitalize="none"
     autoCorrect={false}
     placeholder={placeholder}
-    placeholderTextColor={'#868686'}
+    placeholderTextColor={colors.inputPlaceholder}
   />
 );
 
