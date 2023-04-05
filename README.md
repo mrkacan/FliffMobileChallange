@@ -1,5 +1,5 @@
 
-# [WIP] Fliff Mobile Challange
+# Fliff Mobile Challange
 > **Notes**: Since Twitter APIs V2 version is not free, Sava asked me to mock APIs. Simply I created JSON and hooks for fetching data. I hope it's enough for this challenge. (I was can prefer json-server, but I wanted to focus implementation of challenge.
 
 ## Tech Stack
@@ -10,6 +10,7 @@
 - Formatting: Prettier
 - Styling: Styled Components
 - Testing: Jest, React Native Testing Library
+- Using react-native-error-boundary for error handling
 
 
 ## How to run
@@ -49,9 +50,10 @@ yarn test
 - Your username can only contain letters, numbers and _ (reg ex: /^[A-Za-z0-9_]+$/))
 
 ## TO-DO
-- [ ] Add more tests
-- [ ] Add more comments
-- [ ] Add more error handling
-- [ ] UI/UX improvements (Make it more beautiful)
-- [ ] Complete Readme.md
-- [ ] Check codebase for bugs and quality
+- [x] Add more tests
+  - Added some tests for Login Screen
+- [x] Add more comments
+- [x] Add more error handling
+- [x] UI/UX improvements (Make it more beautiful)
+- [x] Complete Readme.md
+- [x] Check codebase for bugs and quality

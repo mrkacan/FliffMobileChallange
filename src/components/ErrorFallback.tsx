@@ -1,6 +1,6 @@
 // create simple error fallback component with styled components
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
 import styled from 'styled-components/native';
 
 const StyledErrorFallbackContainer = styled.View`

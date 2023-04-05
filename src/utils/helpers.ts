@@ -1,3 +1,5 @@
+// This function is used to calculate the time difference between the current time and the time passed as a parameter
+// It returns a string with the time difference in the format: 1d, 2h, 3m, 4s
 export const calculateDateFromNow = (date?: string) => {
   if (!date) {
     return '';

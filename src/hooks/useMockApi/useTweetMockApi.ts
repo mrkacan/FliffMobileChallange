@@ -10,6 +10,7 @@ type UseTweetMockApi = {
   loading: boolean;
 };
 
+// Sort tweets by created_at
 const tweetsData = unsortedTweets.sort((a, b) => {
   return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
 });
@@ -31,6 +32,7 @@ const useTweetMockApi = (): UseTweetMockApi => {
     }
 
     try {
+      // Simulate a network request
       setTimeout(() => {
         const newData = tweetsData.slice(start, start + LIMIT);
         setData(prevData => [...prevData, ...newData] as tweet[]);
