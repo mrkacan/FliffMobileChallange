@@ -9,11 +9,11 @@ const StyledView = styled.View`
   margin: 25px;
 `;
 
-const Screen: React.FC<ContainerProps> = ({children}) => {
+const Container: React.FC<ContainerProps> = ({children}) => {
   if (!children) {
     return null;
   }
   return <StyledView>{children}</StyledView>;
 };
 
-export default Screen;
+export default Container;

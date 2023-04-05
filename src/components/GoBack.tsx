@@ -23,7 +23,7 @@ const StyledArrow = styled.View`
   margin-right: -3px;
 `;
 
-const Button: React.FC = () => {
+const GoBack: React.FC = () => {
   const navigation = useNavigation();
   return (
     <StyledTouchableHighlight onPress={navigation.goBack}>
@@ -32,4 +32,4 @@ const Button: React.FC = () => {
   );
 };
 
-export default Button;
+export default GoBack;
