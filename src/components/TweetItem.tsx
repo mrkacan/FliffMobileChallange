@@ -48,6 +48,7 @@ const StyledImage = styled.Image`
 const StyledUsername = styled.Text`
   font-size: 14px;
   font-weight: bold;
+  color: #101010;
 `;
 
 const StyledDate = styled.Text`
@@ -58,6 +59,7 @@ const StyledDate = styled.Text`
 
 const StyledContent = styled.Text`
   font-size: 13px;
+  color: #101010;
 `;
 
 const StyledShowMore = styled.Text`
