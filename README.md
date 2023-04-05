@@ -12,6 +12,12 @@
 - Testing: Jest, React Native Testing Library
 - Using react-native-error-boundary for error handling
 
+## Images from App
+### IOS
+<img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/ios1.png?raw=true" width="22%"> <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/ios2.png?raw=true" width="22%"> <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/ios4.png?raw=true" width="22%"> <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/ios3.png?raw=true" width="22%">
+
+### Android
+<img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/android4.jpg?raw=true" width="22%"> <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/android1.jpg?raw=true" width="22%"> <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/android2.jpg?raw=true" width="22%"> <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/android3.jpg?raw=true" width="22%">
 
 ## How to run
 ### Install dependencies
