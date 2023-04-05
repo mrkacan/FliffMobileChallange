@@ -9,6 +9,7 @@ type InputProps = {
     value: string;
   };
   placeholder?: string;
+  testID?: string;
 };
 
 const StyledTextInput = styled.TextInput`
@@ -24,6 +25,7 @@ const StyledTextInput = styled.TextInput`
 const Input: React.FC<InputProps> = ({
   field: {onChange, onBlur, value},
   placeholder,
+  testID,
 }) => (
   <StyledTextInput
     onBlur={onBlur}
@@ -33,6 +35,7 @@ const Input: React.FC<InputProps> = ({
     autoCorrect={false}
     placeholder={placeholder}
     placeholderTextColor={colors.inputPlaceholder}
+    testID={testID}
   />
 );
 

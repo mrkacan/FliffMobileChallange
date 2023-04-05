@@ -14,7 +14,7 @@ const HomeScreen: React.FC = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleEndReached = () => {
     if (hasMore) {
@@ -31,7 +31,7 @@ const HomeScreen: React.FC = () => {
   }
 
   return (
-    <Screen>
+    <Screen testID="homeScreen">
       <Loader loading={loading} />
       <FlatList
         data={data}

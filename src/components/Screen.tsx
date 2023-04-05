@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 
 type ScreenProps = {
   children: React.ReactNode;
+  testID?: string;
 };
 
 const StyledSafeAreaView = styled.SafeAreaView`
@@ -10,11 +11,11 @@ const StyledSafeAreaView = styled.SafeAreaView`
   background-color: #fff;
 `;
 
-const Screen: React.FC<ScreenProps> = ({children}) => {
+const Screen: React.FC<ScreenProps> = ({children, testID}) => {
   if (!children) {
     return null;
   }
-  return <StyledSafeAreaView>{children}</StyledSafeAreaView>;
+  return <StyledSafeAreaView testID={testID}>{children}</StyledSafeAreaView>;
 };
 
 export default Screen;

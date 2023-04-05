@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 type ButtonProps = {
   children: string;
   onPress: () => void;
+  testID?: string;
 };
 
 const StyledTouchableHighlight = styled.TouchableHighlight`
@@ -22,9 +23,9 @@ const StyledText = styled.Text`
   font-weight: bold;
 `;
 
-const Button: React.FC<ButtonProps> = ({children, onPress}) => {
+const Button: React.FC<ButtonProps> = ({children, onPress, testID}) => {
   return (
-    <StyledTouchableHighlight onPress={onPress}>
+    <StyledTouchableHighlight onPress={onPress} testID={testID}>
       <StyledText>{children}</StyledText>
     </StyledTouchableHighlight>
   );

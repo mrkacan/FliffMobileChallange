@@ -4,6 +4,7 @@ import {colors} from '../themes/colors';
 
 type InputErrorProps = {
   children?: string;
+  testID?: string;
 };
 
 //error message
@@ -13,11 +14,11 @@ const StyledText = styled.Text`
   margin: 10px 15px;
 `;
 
-const InputError: React.FC<InputErrorProps> = ({children}) => {
+const InputError: React.FC<InputErrorProps> = ({children, testID}) => {
   if (!children) {
     return null;
   }
-  return <StyledText>{children}</StyledText>;
+  return <StyledText testID={testID}>{children}</StyledText>;
 };
 
 export default InputError;

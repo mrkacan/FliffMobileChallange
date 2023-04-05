@@ -33,7 +33,9 @@ const LoginScreen: React.FC = () => {
     <Screen>
       <Container>
         <Spacer height={20} />
-        <Title>To get started, first enter your @username</Title>
+        <Title testID="loginWelcomeText">
+          To get started, first enter your @username
+        </Title>
         <Controller
           name="username"
           control={control}
@@ -50,12 +52,22 @@ const LoginScreen: React.FC = () => {
             },
           }}
           render={({field: {onChange, onBlur, value}}) => (
-            <Input field={{onChange, onBlur, value}} placeholder="Username" />
+            <Input
+              field={{onChange, onBlur, value}}
+              placeholder="Username"
+              testID="loginInput"
+            />
           )}
         />
-        {errors.username && <InputError>{errors.username.message}</InputError>}
+        {errors.username && (
+          <InputError testID="loginErrorText">
+            {errors.username.message}
+          </InputError>
+        )}
         <Spacer height={20} />
-        <Button onPress={handleSubmit(onSubmit)}>Log in</Button>
+        <Button testID="loginButton" onPress={handleSubmit(onSubmit)}>
+          Log in
+        </Button>
         <Spacer height={20} />
       </Container>
     </Screen>
