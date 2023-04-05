@@ -16,6 +16,8 @@ import LoginScreen from './screens/LoginScreen/LoginScreen';
 import {AuthProvider, useAuth} from './hooks/useAuth';
 import {tweet} from './types';
 import {colors} from './themes/colors';
+import ErrorBoundary from 'react-native-error-boundary';
+import ErrorFallback from './components/ErrorFallback';
 
 type RootStackParamList = {
   main: undefined;
@@ -101,10 +103,12 @@ const AppMainStack = () => {
 
 function App(): JSX.Element {
   return (
-    <AuthProvider>
-      <StatusBar barStyle="dark-content" />
-      <AppMainStack />
-    </AuthProvider>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <AuthProvider>
+        <StatusBar barStyle="dark-content" />
+        <AppMainStack />
+      </AuthProvider>
+    </ErrorBoundary>
   );
 }
 
