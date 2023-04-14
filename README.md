@@ -12,6 +12,11 @@
 - Testing: Jest, React Native Testing Library
 - Using react-native-error-boundary for error handling
 
+
+## What can be next?
+- [ ] Using verticalScale, horizontalScale, moderateScale for responsive design
+
+
 ## Images from App
 ### IOS
 <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/ios1.png?raw=true" width="22%"> <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/ios2.png?raw=true" width="22%"> <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/ios4.png?raw=true" width="22%"> <img src="https://github.com/mrkacan/FliffMobileChallange/blob/main/githubAssets/ios3.png?raw=true" width="22%">
